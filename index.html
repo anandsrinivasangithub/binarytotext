@@ -35,7 +35,7 @@
     <title>Binary to Text Converter</title>
   </head>
   <body>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+ 
     <script src="script.js"></script>
 
     <h1 style="margin-top: 2rem" class="text-center">
@@ -82,20 +82,13 @@
           onclick="copyText()"
           disabled
         >
-          <i style="margin-right: 1rem" class="fa fa-copy"></i>Copy Text
         </button>
         <h3 style="margin-top: 2rem" class="text-center" id="resultingText">
           <br />
         </h3>
       </div>
     </div>
-    <script>
-      $(document).ready(function(){
-  $('copy-btn').click(function(){
-     $(this).removeClass('btn btn-secondary').addClass('btn btn-secondary');
-  });
-});
-</script>
+
     </script>
   </body>
 </html>
