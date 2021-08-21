@@ -28,12 +28,12 @@ function goButtonClicked() {
 }
 
 function copyText() {
+  document.getElementById("copy-btn").innerHTML = "Copied!";
   var text = document.getElementById("resultingText").innerText;
   var elem = document.createElement("textarea");
   document.body.appendChild(elem);
   elem.value = text;
   elem.select();
   document.execCommand("copy");
-  document.getElementById("copy-btn").value = "Close Curtain";
   document.body.removeChild(elem);
 }
