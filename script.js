@@ -2,8 +2,6 @@ window.onload = () => {
   document.getElementById("copy-btn").setAttribute("disabled", "disabled");
 };
 
-//hello fellow human
-
 function goButtonClicked() {
   const textValue = document.getElementById("textarea").value;
 

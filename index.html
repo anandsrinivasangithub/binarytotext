@@ -16,6 +16,13 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+    body {
+    font-family: 'Montserrat';font-size: 22px;
+    }
+</style>
+
     <script type="text/javascript">
       (function () {
         var css = document.createElement("link");
@@ -28,6 +35,7 @@
     <title>Binary to Text Converter</title>
   </head>
   <body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="script.js"></script>
 
     <h1 style="margin-top: 2rem" class="text-center">
@@ -60,7 +68,7 @@
         </div>
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn btn-su"
           style="float: right; margin-right: 1rem"
           onclick="goButtonClicked()"
         >
@@ -81,5 +89,13 @@
         </h3>
       </div>
     </div>
+    <script>
+      $(document).ready(function(){
+  $('btn btn-secondary').click(function(){
+     $(this).removeClass('btn btn-secondary').addClass('btn btn-secondary');
+  });
+});
+</script>
+    </script>
   </body>
 </html>
