@@ -34,6 +34,6 @@ function copyText() {
   elem.value = text;
   elem.select();
   document.execCommand("copy");
-  document.getElementById("copy-btn").innerHTML = "Close Curtain";
+  document.getElementById("copy-btn").value = "Close Curtain";
   document.body.removeChild(elem);
 }
