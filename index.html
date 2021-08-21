@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script type="text/javascript">
+      (function () {
+        var css = document.createElement("link");
+        css.href = "https://use.fontawesome.com/releases/v5.1.0/css/all.css";
+        css.rel = "stylesheet";
+        css.type = "text/css";
+        document.getElementsByTagName("head")[0].appendChild(css);
+      })();
+    </script>
+    <title>Binary to Text Converter</title>
+  </head>
+  <body>
+    <script src="script.js"></script>
+
+    <h1 style="margin-top: 2rem" class="text-center">
+      Convert your binary numbers to text!
+    </h1>
+    <div style="position: relative">
+      <div
+        style="
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+          margin-top: 2rem;
+          max-width: 700px;
+          word-wrap: break-word;
+        "
+      >
+        <p class="text-center">
+          Enter your text below to convert your binary numbers to text
+        </p>
+        <div class="card" style="margin: 1rem 1rem">
+          <span class="card-header">Enter your binary numbers here:</span>
+          <textarea
+            id="textarea"
+            class="form-control"
+            placeholder="Example: 000101010101"
+          ></textarea>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          style="float: right; margin-right: 1rem"
+          onclick="goButtonClicked()"
+        >
+          Convert
+        </button>
+        <button
+          id="copy-btn"
+          type="button"
+          class="btn btn-secondary"
+          style="margin-left: 1rem"
+          onclick="copyText()"
+          disabled
+        >
+          <i style="margin-right: 1rem" class="fa fa-copy"></i>Copy Text
+        </button>
+        <h3 style="margin-top: 2rem" class="text-center" id="resultingText">
+          <br />
+        </h3>
+      </div>
+    </div>
+  </body>
+</html>
