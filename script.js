@@ -13,13 +13,14 @@ function goButtonClicked() {
   }
   let newString = binaryAgent(textValue);
 
-  document.getElementById("resultingText").innerHTML = newString;
+  document.getElementById("textareayuh").innerHTML = newString;
   document.getElementById("copy-btn").removeAttribute("disabled");
 }
 
 function copyText() {
   document.getElementById("copy-btn").innerHTML = "Copied!";
-  var text = document.getElementById("resultingText").innerText;
+  document.getElementById("copy-btn").className = "btn btn-success";
+  var text = document.getElementById("textareayuh").innerText;
   var elem = document.createElement("textarea");
   document.body.appendChild(elem);
   elem.value = text;

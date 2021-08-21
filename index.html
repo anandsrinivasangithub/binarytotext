@@ -68,25 +68,32 @@
         </div>
         <button
           type="button"
-          class="btn btn-su"
+          class="btn btn-primary"
           style="float: right; margin-right: 1rem"
           onclick="goButtonClicked()"
         >
           Convert
         </button>
+    
+        <br><br><br>
+          <div class="card" style="margin: 1rem 1rem">
+          <span class="card-header">Text output here:</span>
+          <textarea
+            id="textareayuh"
+            class="form-control"
+            readonly
+          ></textarea>
+        </div>
         <button
-          id="copy-btn"
-          type="button"
-          class="btn btn-secondary"
-          style="margin-left: 1rem"
-          onclick="copyText()"
-          disabled
-        >
-        Copy Text
-        </button>
-        <h3 style="margin-top: 2rem" class="text-center" id="resultingText">
-          <br />
-        </h3>
+        id="copy-btn"
+        type="button"
+        class="btn btn-secondary"
+        style="margin-left: 1rem"
+        onclick="copyText()"
+        disabled
+      >
+      Copy Text
+      </button>
       </div>
     </div>
 
