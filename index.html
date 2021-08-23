@@ -16,13 +16,16 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    
     <style>
     body {
     font-family: 'Montserrat';font-size: 22px;
     }
 </style>
-
+<!-- 1101001 01100110 00100000 01111001 01101111 01110101 00100111 01110010 01100101 00100000 01110010 01100101 01100001 01100100 01101001 01101110 01100111 00100000 01110100 01101000 01101001 01110011 00100000 01111001 01101111 01110101 00100111 01110010 01100101 00100000 01100011 01101111 01101111 01101100 00100000 00111010 00101001 -->
     <script type="text/javascript">
       (function () {
         var css = document.createElement("link");
@@ -37,6 +40,7 @@
   <body>
  
     <script src="script.js"></script>
+    <script src="./FileSaver.js"></script>
 
     <h1 style="margin-top: 2rem" class="text-center">
       Convert your binary numbers to text!
@@ -55,9 +59,6 @@
           word-wrap: break-word;
         "
       >
-        <p class="text-center">
-          Enter your text below to convert your binary numbers to text
-        </p>
         <div class="card" style="margin: 1rem 1rem">
           <span class="card-header">Enter your binary numbers here:</span>
           <textarea
@@ -70,17 +71,23 @@
           type="button"
           class="btn btn-primary"
           style="float: right; margin-right: 1rem"
-          onclick="goButtonClicked()"
+          onclick="convertToBinary()"
         >
           Convert
         </button>
-    
+        <input id="fileInput" type="file" style="display:none;" />
+        <input 
+        type="button" 
+        value="Open File" 
+        class = "btn btn-secondary"
+        style="margin-left: 1rem;" 
+        onclick="document.getElementById('fileInput').click();" />
         <br><br><br>
           <div class="card" style="margin: 1rem 1rem">
-          <span class="card-header">Text output here:</span>
           <textarea
             id="textareayuh"
             class="form-control"
+            placeholder= "Text output here"
             readonly
           ></textarea>
         </div>
@@ -94,9 +101,47 @@
       >
       Copy Text
       </button>
+      <button
+          id = "notacopybtnbutimoitsjustasgoodrightsfornoncopybuttons"
+          type="button"
+          class="btn btn-secondary"
+          onclick="saveTheTxtlol()"
+          disabled
+        >
+          Save File
+        </button>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Made by <a href = "https://github.com/fryingpandev/">Frying Pan</a></span>
+      </div>
+    </footer>
+<script>
+function text2Binary(string) {
+    return string.split('').map(function (char) {
+        return char.charCodeAt(0).toString(2);
+    }).join(' ');
+}
+        document.getElementById('fileInput')
+            .addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+              let actualresult = text2Binary(fr.result)
+                document.getElementById('textarea')
+                        .textContent=actualresult;
+            }
+              
+            fr.readAsText(this.files[0]);
+        })
+function saveTheTxtlol() {
 
-    </script>
+var userInput = document.getElementById("textareayuh").innerHTML;
+
+var blob = new Blob([userInput], { type: "text/plain;charset=utf-8" });
+saveAs(blob, "binarytotext.txt");
+}
+</script>
   </body>
 </html>
